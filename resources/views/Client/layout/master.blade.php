@@ -70,7 +70,7 @@
 								</div>
 							</li>
 						</ul>
-						<form class="d-flex my-2 my-lg-0">
+						<form class="d-flex my-2 my-lg-0 me-3">
 							<input
 								class="form-control me-sm-2"
 								type="text"
@@ -83,18 +83,49 @@
 								Search
 							</button>
 						</form>
+						<div class="d-flex">
+							<a href="#" class="btn btn-outline-primary me-2">Đăng nhập</a>
+							<a href="#" class="btn btn-primary">Đăng ký</a>
+						</div>
 					</div>
 				</div>
 			</nav>
-
 		</header>
 
 		<main>
 			@yield('content')
 		</main>
 
-		<footer>
-			<!-- place footer here -->
+		<footer class="bg-dark text-light py-4 mt-5">
+				<div class="container">
+			<div class="row">
+					<div class="col-md-4 mb-3">
+				<h5>About Us</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec.</p>
+					</div>
+					<div class="col-md-4 mb-3">
+				<h5>Quick Links</h5>
+				<ul class="list-unstyled">
+						<li><a href="#" class="text-light">Home</a></li>
+						<li><a href="#" class="text-light">Products</a></li>
+						<li><a href="#" class="text-light">Services</a></li>
+						<li><a href="#" class="text-light">Contact</a></li>
+				</ul>
+					</div>
+					<div class="col-md-4 mb-3">
+				<h5>Contact Info</h5>
+				<ul class="list-unstyled">
+						<li>Email: info@example.com</li>
+						<li>Phone: +1 234 567 890</li>
+						<li>Address: 123 Street, City, Country</li>
+				</ul>
+					</div>
+			</div>
+			<hr class="bg-light">
+			<div class="text-center">
+					<p class="mb-0">&copy; 2024 Your Company. All rights reserved.</p>
+			</div>
+				</div>
 		</footer>
 
 		<!-- Bootstrap JavaScript Libraries -->
