@@ -24,7 +24,7 @@
 				class="navbar navbar-expand-sm navbar-light bg-light"
 			>
 				<div class="container">
-					<a class="navbar-brand" href="#">Navbar</a>
+					<a class="navbar-brand" href="#">Immortal</a>
 					<button
 						class="navbar-toggler d-lg-none"
 						type="button"
@@ -46,6 +46,9 @@
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">Link</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Cửa hàng</a>
 							</li>
 							<li class="nav-item dropdown">
 								<a
