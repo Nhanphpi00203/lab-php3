@@ -5,22 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Comment extends Model
 {
 	use HasFactory;
 
-	protected $table = 'categories';
+	protected $table = 'comments';
 
 	protected $fillable = [
-		'name',
-		'slug',
-		'status',
+		'user_id',
+		'tin_id',
+		'content',
 		'created_at',
 		'updated_at',
-	];
-
-	protected $attributes = [
-		'status' => 1,
 	];
 
 	protected $dates = [
@@ -28,12 +24,8 @@ class Category extends Model
 		'updated_at',
 	];
 
-	protected $casts = [
-		'status' => 'boolean',
-	];
-
-	public function products()
+	public function user()
 	{
-		return $this->hasMany(Product::class);
+		return $this->belongsTo(User::class);
 	}
 }

@@ -9,34 +9,41 @@ class Product extends Model
 {
 	use HasFactory;
 
+	protected $table = 'products';
+
 	protected $fillable = [
-		'title',
+		'name',
 		'slug',
-		'description',
-		'price',
-		'content',
-		'sale_price',
 		'thumbnail',
-		'status'
+		'price',
+		'sale_price',
+		'content',
+		'status',
+		'category_id',
+		'created_at',
+		'updated_at'
 	];
 
-	// Giá trị mặc định
 	protected $attributes = [
 		'status' => 1,
 		'sale_price' => 0,
 		'thumbnail' => '',
 	];
 
-	// Trường ngày tháng (nếu có)
 	protected $dates = [
 		'created_at',
 		'updated_at',
 	];
 
-	// Ép kiểu dữ liệu
 	protected $casts = [
 		'price' => 'float',
 		'sale_price' => 'float',
 		'status' => 'boolean',
+		'category_id' => 'integer',
 	];
+
+	public function category()
+	{
+		return $this->belongsTo(Category::class);
+	}
 }
