@@ -1,0 +1,30 @@
+Route::get('/', [TinController::class, 'index'])->name('home');
+
+// Nhóm route cho Admin
+Route::name('admin.')->prefix('admin')->group(function () {
+	Route::name('value:')->prefix('prefix:')->group(function () {
+		Route::get('/')->name('name: dashboard');
+		Route::get('/category')->name('name: category');
+		Route::get('/product')->name('name: product');
+		Route::get('/order')->name('name: order');
+		Route::get('/post')->name('name: post');
+		Route::get('/card')->name('name: card');
+		Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('name: checkout');
+	});
+})->middleware(CheckAdmin::class);
+
+// Nhóm route cho Client
+Route::name('client.')->prefix('client')->group(function () {
+	Route::name('value:')->prefix('prefix:')->group(function () {
+		Route::get('/')->name('name: home');
+		Route::get('/dashboard')->name('name: dashboard');
+		Route::get('/category')->name('name: category');
+		Route::get('/product')->name('name: product');
+		Route::get('/order')->name('name: order');
+		Route::get('/post')->name('name: post');
+		Route::get('/card')->name('name: card');
+		Route::get('/checkout', [ClientCheckoutController::class, 'checkout'])->name('checkout');
+
+		Route::get('/blog')->name('name: blog');
+	});
+})->middleware('middleware: auth');
